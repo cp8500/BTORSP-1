@@ -4,7 +4,7 @@ class_name Move
 
 var myOwner : GamePiece
 
-
+var moveName = ""
 
 #only affect UI
 var maxTargets = 1

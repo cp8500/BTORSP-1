@@ -5,6 +5,7 @@ class_name CharacterPreset
 func _init(
 	characterName: String,
 	characterClass : String,
+	startingLevel : int,
 	maxHealth: int,
 	maxMana: int,
 	ATK: int,
@@ -15,6 +16,7 @@ func _init(
 ) -> void:
 	self.characterName = characterName
 	self.characterClass = characterClass
+	self.startingLevel = startingLevel
 	self.maxHealth = maxHealth
 	self.maxMana = maxMana
 	self.ATK = ATK
@@ -29,6 +31,8 @@ var characterClass
 var maxHealth
 var maxMana
 
+var startingLevel
+
 var ATK = 0
 var SPD = 0
 var DEF = 0
@@ -38,6 +42,8 @@ var moves = [] #list of strings
 
 func applyTo(gp : GamePiece):
 	var st = gp.status
+	
+	gp.characterClass = characterClass
 	
 	st.ATK = ATK
 	st.SPD = SPD
@@ -49,4 +55,9 @@ func applyTo(gp : GamePiece):
 	
 	gp.moves = moves
 	gp.name = characterName
+	
+	gp.level = 0
+	while gp.level < startingLevel:
+		gp.levelUp()
+	
 	

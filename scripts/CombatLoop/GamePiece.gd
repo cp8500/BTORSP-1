@@ -2,19 +2,16 @@ extends Object
 
 class_name GamePiece
 
-enum Moves {
-	dog,
-	cat,
-	orphan
-}
+var characterClass : CharacterClass
 
-var myMoves : Moves
+var level = 0
 
 var stage : Stage
 
 var name = ""
 
-var moves = []
+#moves is a list of strings
+var moves : Array[String] = []
 
 
 
@@ -32,7 +29,15 @@ func getEveryone():
 	everyone.append_array(getAllies())
 	return everyone
 
+func levelUp():
+	characterClass.levelPieceUp(self)
 
+func hasMove(move : String):
+	for myMove in moves:
+		if myMove == move:
+			return true
+	
+	return false
 
 func onTurnEnd():
 	
