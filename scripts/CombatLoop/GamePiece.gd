@@ -2,6 +2,14 @@ extends Node
 
 class_name GamePiece
 
+enum Moves {
+	dog,
+	cat,
+	orphan
+}
+
+var myMoves : Moves
+
 var stage : Stage
 
 var moves = []

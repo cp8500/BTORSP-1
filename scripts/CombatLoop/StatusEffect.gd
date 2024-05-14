@@ -8,8 +8,8 @@ func _init(statusName_arg: String, description_arg: String, initLambda_arg: Call
 	initLambda = initLambda_arg
 	effect = effect_arg
 
-var statusName : String
-var description : String
+@export var statusName : String
+@export var description : String
 
 var amount = 0
 
