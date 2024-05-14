@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 StatusConstants="*res://scripts/Constants/StatusConstants.gd"
+MoveConstants="*res://scripts/Constants/MoveConstants.gd"
+CharacterConstants="*res://scripts/Constants/CharacterConstants.gd"
 
 [file_customization]
 

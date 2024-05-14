@@ -2,4 +2,8 @@ extends Object
 
 const Ranger = "Ranger"
 const Healer = "Healer"
-const 
+const Fighter = "Fighter"
+
+var list = []
+
+
