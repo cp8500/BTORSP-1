@@ -32,6 +32,9 @@ func getEveryone():
 func levelUp():
 	characterClass.levelPieceUp(self)
 
+func takeDamage(amount : int):
+	status.takeDamage(amount)
+
 func hasMove(move : String):
 	for myMove in moves:
 		if myMove == move:

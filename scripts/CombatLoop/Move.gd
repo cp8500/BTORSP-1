@@ -4,39 +4,66 @@ class_name Move
 
 var myOwner : GamePiece
 
+func _init(name: String, maxTargets: int, retargetable: bool, defaultTargetAllEnemies: bool, defaultTargetAllAllies: bool, apply: Callable, onSelected: Callable = onSelected) -> void:
+	moveName = name
+	self.maxTargets = maxTargets
+	self.retargetable = retargetable
+	self.defaultTargetAllEnemies = defaultTargetAllEnemies
+	self.defaultTargetAllAllies = defaultTargetAllAllies
+	self.apply = apply
+	self.onSelected = onSelected
+	
+
+func cannotTargetAllies() -> Move:
+	canTargetAllies = false
+	return self
+func cannotTargetEnemies() -> Move:
+	canTargetEnemies = false
+	return self
+
+func setManaCost(amount: int) -> Move:
+	manaCost = amount
+	return self
+
+func setCanBeSelected(canBeSelectedLambda : Callable) -> Move:
+	canBeSelected = canBeSelectedLambda
+	return self
+
 var moveName = ""
 
 #only affect UI
 var maxTargets = 1
-var canTargetAllies = false
+var canTargetAllies = true
 var canTargetEnemies = true
 var retargetable = true
 
 var defaultTargetAllEnemies = false
 var defaultTargetAllAllies = false
 
-var targets = []
+var manaCost = 0
 
-func _init():
-	print("Hey, init hasn't been overrided.")
+var targets : Array[GamePiece] = []
+
+var canBeSelected : Callable = func(this : Move):
+	if myOwner.status.MANA >= manaCost:
+		return true
+	
+	return false
 
 #called when the player selects this move
-func onSelected():
+var onSelected : Callable = func(this : Move):
 	
-	targets.clear()
+	this.targets.clear()
 	
 	if defaultTargetAllEnemies:
-		for target in myOwner.getEnemies():
-			targets.append(target)
+		for target in this.myOwner.getEnemies():
+			this.targets.append(target)
 	if defaultTargetAllAllies:
-		for target in myOwner.getAllies():
-			targets.append(target)
-	
+		for target in this.myOwner.getAllies():
+			this.targets.append(target)
 	pass
 
-#to be ovverided
-func apply():
-	
-	print("Hey, apply hasn't been overrided.")
+#what the move does when applied
+var apply : Callable = func(this : Move):
 	
 	pass

@@ -1,8 +1,10 @@
-extends Object
+extends Node
 
-const Ranger = "Ranger"
-const Healer = "Healer"
-const Fighter = "Fighter"
+class_name CharacterClassConstants
+
+const RANGER = "RANGER"
+const HEALER = "HEALER"
+const FIGHTER = "FIGHTER"
 
 var list : Array[CharacterClass] = []
 
@@ -20,7 +22,7 @@ func getList() -> Array[CharacterClass]:
 		return list
 	
 	list.append(CharacterClass.new(
-		Ranger, #className
+		RANGER, #className
 		2, #ATKUP = atkUp
 		4, #SPDUP = spdUp
 		6, # DEFUP = defUp

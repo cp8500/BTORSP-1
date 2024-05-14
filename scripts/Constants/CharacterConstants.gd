@@ -1,8 +1,6 @@
-extends Object
+extends Node
 
-const Ranger = "Ranger"
-const Healer = "Healer"
-const Fighter = "Fighter"
+const GEORGE = "GEORGE"
 
 var list : Array[CharacterPreset] = []
 
@@ -19,19 +17,23 @@ func getList() -> Array[CharacterPreset]:
 	if list.size() > 0:
 		return list
 	
+	var mc = MoveConstants
+	var ccc = CharacterClassConstants
+	
 	list.append(CharacterPreset.new(
-		"George", #characterName: String,
-		char, #characterClass : String,
+		GEORGE, #characterName: String,
+		"A valiant fighter, brave and unrelented. Slightly transphobic.",#character Description : String
+		ccc.FIGHTER, #characterClass : String,
 		2, #startingLevel : int,
 		20, #maxHealth: int,
 		6, #maxMana: int,
 		6, #ATK: int,
-		SPD: int,
-		DEF: int,
-		ACR: int,
-		
-		moves: Array
-	)
+		4, #SPD: int,
+		8, #DEF: int,
+		1, #ACR: int,
+		#Starting Moves
+		[mc.PUNCH,mc.STRENGTHEN,mc.SHOOT_ARROW]
+		)
 	)
 	
 	

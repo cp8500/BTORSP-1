@@ -1,4 +1,4 @@
-extends Object
+extends Node
 
 const NULL : String = "NULL" #does nothing, but why?
 
