@@ -28,6 +28,11 @@ const CURSE_OF_KNOWLEDGE : String  = "CURSE_OF_KNOWLEDGE" #identical to poision 
 
 const DEFENDED = "DEFENDED" #increases defence by #DEFENDED
 
+enum Effects {
+	HEALING,
+	
+	
+}
 
 var myOwner : GamePiece
 

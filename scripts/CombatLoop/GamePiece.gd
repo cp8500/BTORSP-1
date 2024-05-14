@@ -8,7 +8,7 @@ var moves = []
 
 
 
-var myStatuses : Status
+var status : Status
 
 
 var belongsToPlayer = true

@@ -7,4 +7,4 @@ func _init():
 	
 
 func apply():
-	targets[0].HP -= 4 + myOwner.GetStrength()
+	targets[0].HP -= 4 + myOwner.status.getStrength()
