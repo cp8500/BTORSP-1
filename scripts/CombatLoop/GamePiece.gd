@@ -1,4 +1,4 @@
-extends Node
+extends Object
 
 class_name GamePiece
 
@@ -11,6 +11,8 @@ enum Moves {
 var myMoves : Moves
 
 var stage : Stage
+
+var name = ""
 
 var moves = []
 
@@ -25,6 +27,12 @@ func getEnemies():
 	return stage.enemyPieces if belongsToPlayer else stage.playerPieces
 func getAllies():
 	return stage.enemyPieces if !belongsToPlayer else stage.playerPieces
+func getEveryone():
+	var everyone : Array = getEnemies()
+	everyone.append_array(getAllies())
+	return everyone
+
+
 
 func onTurnEnd():
 	

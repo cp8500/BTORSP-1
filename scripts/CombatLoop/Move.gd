@@ -1,10 +1,10 @@
-extends Node
+extends Object
 
 class_name Move
 
 var myOwner : GamePiece
 
-var targets = []
+
 
 #only affect UI
 var maxTargets = 1
@@ -14,6 +14,8 @@ var retargetable = true
 
 var defaultTargetAllEnemies = false
 var defaultTargetAllAllies = false
+
+var targets = []
 
 func _init():
 	print("Hey, init hasn't been overrided.")
