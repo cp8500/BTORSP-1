@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c222vadovashe"]
 
-[ext_resource type="Script" path="res://scripts/CombatLoop/BattleStage.gd" id="1_tr5a2"]
+[ext_resource type="Script" path="res://scripts/CombatLoop/BattleStage.gd" id="1_gaub3"]
 
 [sub_resource type="Theme" id="Theme_l3j78"]
 default_font_size = 60
@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_l3j78")
-script = ExtResource("1_tr5a2")
+script = ExtResource("1_gaub3")
 encounterName = null
 
 [node name="BattleStage" type="Node2D" parent="."]

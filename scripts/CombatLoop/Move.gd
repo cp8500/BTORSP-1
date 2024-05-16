@@ -69,3 +69,14 @@ var onSelected : Callable = func(this : Move):
 var apply : Callable = func(this : Move):
 	
 	pass
+
+func toggleTarget(gamePiece : GamePiece):
+	
+	if targets.has(gamePiece):
+		targets.remove_at(targets.find(gamePiece))
+	else:
+		targets.append(gamePiece)
+	
+	pass
+
+
