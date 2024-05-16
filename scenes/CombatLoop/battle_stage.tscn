@@ -15,7 +15,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_l3j78")
 script = ExtResource("1_gaub3")
-encounterName = "GEORGE_AMBUSH"
+encounterName = "GOBLIN_TRIO"
 
 [node name="BattleStage" type="Node2D" parent="."]
 

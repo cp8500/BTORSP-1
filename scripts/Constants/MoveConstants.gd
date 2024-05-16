@@ -17,7 +17,9 @@ const HEAL = "HEAL"
 const WEAKEN = "WEAKEN"
 
 
-
+# goblin moves
+const STAB = "STAB"
+const STAB_WEAKNESS = "STAB_WEAKNESS"
 
 
 
@@ -60,6 +62,37 @@ func getList() -> Array[Move]:
 			false, #defaultTargetAllAllies
 			func (this : Move):
 				this.targets[0].takeDamage(8 + this.myOwner.status.getAccuracy())
+				pass
+				, #apply lambda, what it does when it's applied. 
+			#code that it runs by default when selected.
+		)
+	)
+	
+	list.append(Move.new(
+			STAB, #name
+			"Deals 8 + STRENGTH / 2 damage.", #Summary
+			1, #maxTargets
+			true, #retargetable
+			false, #defaultTargetAllEnemies
+			false, #defaultTargetAllAllies
+			func (this : Move):
+				this.targets[0].takeDamage(8 + this.myOwner.status.getStrength() / 2)
+				pass
+				, #apply lambda, what it does when it's applied. 
+			#code that it runs by default when selected.
+		)
+	)
+	
+	list.append(Move.new(
+			STAB_WEAKNESS, #name
+			"Deals 7 + STRENGTH / 3 damage, applies +2 Weakness", #Summary
+			1, #maxTargets
+			true, #retargetable
+			false, #defaultTargetAllEnemies
+			false, #defaultTargetAllAllies
+			func (this : Move):
+				this.targets[0].takeDamage(7 + this.myOwner.status.getStrength() / 3)
+				this.targets[0].status.apply(StatusConstants.WEAK, 2)
 				pass
 				, #apply lambda, what it does when it's applied. 
 			#code that it runs by default when selected.

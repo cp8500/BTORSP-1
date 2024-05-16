@@ -16,8 +16,9 @@ func _ready():
 	
 	encounter = EncounterConstants.getConstant(encounterName) 
 	
-	var i = 0
+	var i = -1
 	for shell in encounter.getShells():
+		i += 1
 		%characters.add_child(shell)
 		
 		shell.global_position = %EnemyPositions.get_child(i).global_position

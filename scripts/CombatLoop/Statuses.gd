@@ -28,16 +28,22 @@ var MANA = 0
 
 var statusEffects : Array = []
 
+func apply(effect : String,amount : int):
+	getEffect(effect).amount += amount
+	pass
+
 func has(effect : String):
 	return getEffect(effect).amount > 0
 
 func amount(effect : String):
 	return getEffect(effect).amount
 
-func getEffect(effect : String):
+func getEffect(effect : String) -> StatusEffect:
 	for status in statusEffects:
 		if status.statusName == status:
 			return status
+	
+	return null
 
 func _init():
 	

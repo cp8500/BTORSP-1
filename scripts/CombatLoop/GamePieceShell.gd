@@ -8,5 +8,8 @@ var gamePiece : GamePiece
 
 
 func _on_target_button_pressed():
-	print("hey button")
+	
+	if BattleStageGlobals.selectedPlayerMove != null:
+		BattleStageGlobals.selectedPlayerMove.toggleTarget(self)
+	
 	pass # Replace with function body.

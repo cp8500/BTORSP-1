@@ -5,6 +5,9 @@ const RANGER = "RANGER"
 const HEALER = "HEALER"
 const FIGHTER = "FIGHTER"
 
+#enemies
+const BASE_ENEMY = "BASE_ENEMY"
+
 var list : Array[CharacterClass] = []
 
 func getClass(className : String) -> CharacterClass:
@@ -36,6 +39,19 @@ func getList() -> Array[CharacterClass]:
 		}
 		)
 	)
+	
+	list.append(CharacterClass.new(
+		BASE_ENEMY, #className
+		3, #ATKUP = atkUp
+		2, #SPDUP = spdUp
+		1, # DEFUP = defUp
+		1, #ACRUP = acrUp
+		#SkillUnlocks = skillUnlocks
+		{1 : mc.STAB}
+		)
+	)
+	
+	
 	
 	
 	

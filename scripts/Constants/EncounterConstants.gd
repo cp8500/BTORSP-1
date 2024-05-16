@@ -1,6 +1,7 @@
 extends Node
 
 const GEORGE_AMBUSH = "GEORGE_AMBUSH"
+const GOBLIN_TRIO = "GOBLIN_TRIO"
 
 var list : Array[Encounter] = []
 
@@ -25,6 +26,10 @@ func getList() -> Array[Encounter]:
 		)
 	)
 	
-	
+	list.append(Encounter.new(
+		GOBLIN_TRIO,
+		[cc.GOBLIN, cc.GOBLIN, cc.GOBLIN]
+		)
+	)
 	
 	return list

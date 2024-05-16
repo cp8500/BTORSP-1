@@ -10,7 +10,7 @@ func _init(statusName_arg: String, description_arg: String, initLambda_arg: Call
 @export var statusName : String
 @export var description : String
 
-var amount = 0
+var amount : int = 0
 
 #the lambda this runs when it is created. This is for initializing.
 var initLambda : Callable = func(status):
