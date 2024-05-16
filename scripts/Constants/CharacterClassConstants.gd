@@ -1,6 +1,5 @@
 extends Node
 
-class_name CharacterClassConstants
 
 const RANGER = "RANGER"
 const HEALER = "HEALER"

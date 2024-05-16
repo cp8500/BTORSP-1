@@ -22,6 +22,9 @@ MoveConstants="*res://scripts/Constants/MoveConstants.gd"
 CharacterConstants="*res://scripts/Constants/CharacterConstants.gd"
 BattleStageGlobals="*res://scripts/CombatLoop/BattleStageGlobals.gd"
 Globals="*res://scripts/Globals.gd"
+PathConstants="*res://scripts/Constants/PathConstants.gd"
+CharacterClassConstants="*res://scripts/Constants/CharacterClassConstants.gd"
+EncounterConstants="*res://scripts/Constants/EncounterConstants.gd"
 
 [display]
 
