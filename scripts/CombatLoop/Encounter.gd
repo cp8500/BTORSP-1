@@ -4,7 +4,7 @@ class_name Encounter
 
 
 # Constructor
-func _init(encounterName: String, enemyNames: Array):
+func _init(encounterName: String, enemyNames: Array[String]):
 	self.encounterName = encounterName
 	self.enemyNames = enemyNames
 
@@ -15,7 +15,7 @@ var enemyNames : Array[String]
 
 func getShells() -> Array[GamePieceShell]:
 	
-	var shells = []
+	var shells : Array[GamePieceShell] = []
 	
 	for enemyName in enemyNames:
 		shells.append(preload("res://scenes/CombatLoop/game_piece_shell.tscn").instantiate())

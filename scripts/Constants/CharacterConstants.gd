@@ -24,7 +24,7 @@ func getList() -> Array[CharacterPreset]:
 		GEORGE, #characterName: String,
 		"A valiant fighter, brave and unrelented. Slightly transphobic.",#character Description : String
 		"res://textures/icon.svg",#Sprite Path
-		ccc.FIGHTER, #characterClass : String,
+		ccc.RANGER, #characterClass : String,
 		2, #startingLevel : int,
 		20, #maxHealth: int,
 		6, #maxMana: int,

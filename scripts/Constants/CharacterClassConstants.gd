@@ -11,7 +11,7 @@ func getClass(className : String) -> CharacterClass:
 	var list = getList()
 	
 	for character in list:
-		if character.characterName == className:
+		if character.ClassName == className:
 			return character
 	
 	return null

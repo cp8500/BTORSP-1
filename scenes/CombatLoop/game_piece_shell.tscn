@@ -10,10 +10,10 @@ script = ExtResource("1_vm76q")
 texture = ExtResource("2_1o66a")
 
 [node name="targetButton" type="Button" parent="."]
-self_modulate = Color(1, 1, 1, 0.12549)
 offset_left = -82.0
 offset_top = -80.0
 offset_right = 78.0
 offset_bottom = 88.0
+text = "hey"
 
 [connection signal="pressed" from="targetButton" to="." method="_on_target_button_pressed"]

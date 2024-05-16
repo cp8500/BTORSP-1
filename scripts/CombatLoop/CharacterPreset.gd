@@ -14,7 +14,7 @@ func _init(
 	SPD: int,
 	DEF: int,
 	ACR: int,
-	moves: Array
+	moves: Array[String]
 ) -> void:
 	self.characterName = characterName
 	self.characterDescription = characterDescription
@@ -31,7 +31,7 @@ func _init(
 
 var characterName
 var characterDescription
-var characterClass
+var characterClass : String
 
 var spritePath
 
@@ -45,12 +45,12 @@ var SPD = 0
 var DEF = 0
 var ACR = 0
 
-var moves = [] #list of strings
+var moves : Array[String] = [] #list of strings
 
 func applyTo(gp : GamePiece):
 	var st = gp.status
 	
-	gp.characterClass = characterClass
+	gp.characterClass = CharacterClassConstants.getClass(characterClass)
 	
 	st.ATK = ATK
 	st.SPD = SPD

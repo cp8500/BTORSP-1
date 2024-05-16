@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d7a2en5ymeqn"]
+[gd_scene load_steps=3 format=3 uid="uid://d7a2en5ymeqn"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_8hle1"]
+[ext_resource type="PackedScene" uid="uid://c222vadovashe" path="res://scenes/CombatLoop/battle_stage.tscn" id="2_jr13x"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_8hle1")
 character_class = "Thief"
+
+[node name="BattleStage" parent="." instance=ExtResource("2_jr13x")]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0

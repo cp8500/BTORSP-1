@@ -2,9 +2,9 @@ extends Node
 
 const GEORGE_AMBUSH = "GEORGE_AMBUSH"
 
-var list : Array[CharacterClass] = []
+var list : Array[Encounter] = []
 
-func getConstant(constantName : String) -> CharacterClass:
+func getConstant(constantName : String) -> Encounter:
 	var list = getList()
 	
 	for constant in list:
@@ -13,15 +13,15 @@ func getConstant(constantName : String) -> CharacterClass:
 	
 	return null
 
-func getList() -> Array[CharacterClass]:
+func getList() -> Array[Encounter]:
 	if list.size() > 0:
 		return list
 	
-	var mc = CharacterConstants
+	var cc = CharacterConstants
 	
 	list.append(Encounter.new(
 		GEORGE_AMBUSH,
-		[mc.GEORGE]
+		[cc.GEORGE]
 		)
 	)
 	

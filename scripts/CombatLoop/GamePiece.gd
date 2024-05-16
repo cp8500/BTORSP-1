@@ -2,6 +2,8 @@ extends Object
 
 class_name GamePiece
 
+
+
 var characterClass : CharacterClass
 
 var level = 0
@@ -15,7 +17,7 @@ var moves : Array[String] = []
 
 
 
-var status : Status
+var status : Status = Status.new()
 
 
 var belongsToPlayer = true
