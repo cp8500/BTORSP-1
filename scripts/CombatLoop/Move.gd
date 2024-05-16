@@ -4,8 +4,9 @@ class_name Move
 
 var myOwner : GamePiece
 
-func _init(name: String, maxTargets: int, retargetable: bool, defaultTargetAllEnemies: bool, defaultTargetAllAllies: bool, apply: Callable, onSelected: Callable = onSelected) -> void:
+func _init(name: String, summary : String, maxTargets: int, retargetable: bool, defaultTargetAllEnemies: bool, defaultTargetAllAllies: bool, apply: Callable, onSelected: Callable = onSelected) -> void:
 	moveName = name
+	self.summary = summary
 	self.maxTargets = maxTargets
 	self.retargetable = retargetable
 	self.defaultTargetAllEnemies = defaultTargetAllEnemies
@@ -30,6 +31,7 @@ func setCanBeSelected(canBeSelectedLambda : Callable) -> Move:
 	return self
 
 var moveName = ""
+var summary = ""
 
 #only affect UI
 var maxTargets = 1

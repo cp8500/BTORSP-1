@@ -5,6 +5,7 @@ class_name CharacterPreset
 func _init(
 	characterName: String,
 	characterDescription : String,
+	spritePath : String,
 	characterClass : String,
 	startingLevel : int,
 	maxHealth: int,
@@ -17,6 +18,7 @@ func _init(
 ) -> void:
 	self.characterName = characterName
 	self.characterDescription = characterDescription
+	self.spritePath = spritePath
 	self.characterClass = characterClass
 	self.startingLevel = startingLevel
 	self.maxHealth = maxHealth
@@ -30,6 +32,8 @@ func _init(
 var characterName
 var characterDescription
 var characterClass
+
+var spritePath
 
 var maxHealth
 var maxMana

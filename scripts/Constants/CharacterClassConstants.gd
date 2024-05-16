@@ -21,14 +21,20 @@ func getList() -> Array[CharacterClass]:
 	if list.size() > 0:
 		return list
 	
+	var mc = MoveConstants
+	
 	list.append(CharacterClass.new(
 		RANGER, #className
 		2, #ATKUP = atkUp
 		4, #SPDUP = spdUp
-		6, # DEFUP = defUp
+		1, # DEFUP = defUp
 		10, #ACRUP = acrUp
 		#SkillUnlocks = skillUnlocks
-		{}
+		{1 : mc.SHOOT_ARROW,
+		5 : mc.SHOOT_ARROW,
+		10 : mc.SHOOT_ARROW,
+		15 : mc.SHOOT_ARROW,
+		}
 		)
 	)
 	

@@ -32,7 +32,7 @@ func getList() -> Array[CharacterPreset]:
 		8, #DEF: int,
 		1, #ACR: int,
 		#Starting Moves
-		[mc.PUNCH,mc.STRENGTHEN,mc.SHOOT_ARROW]
+		[]
 		)
 	)
 	

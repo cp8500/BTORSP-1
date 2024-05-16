@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://vuap6vesb5l5"]
+
+[node name="AttackArrow" type="Node2D"]
+
+[node name="rotatable" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="rotatable"]
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 10.0
+
+[node name="Label" type="Label" parent="rotatable/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Terrible"
+
+[node name="tip" type="Node2D" parent="."]
+position = Vector2(104, 0)
+
+[node name="ColorRect" type="ColorRect" parent="tip"]
+offset_left = -41.0
+offset_top = 18.0
+offset_right = -1.0
+offset_bottom = 33.0
+rotation = -0.785398
+
+[node name="ColorRect3" type="ColorRect" parent="tip"]
+offset_left = -34.0
+offset_top = 14.0
+offset_right = -6.0
+offset_bottom = 29.0
+rotation = -1.5514
+
+[node name="ColorRect2" type="ColorRect" parent="tip"]
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 10.0
+offset_bottom = -13.0
+rotation = 0.785398

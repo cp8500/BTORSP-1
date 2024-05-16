@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://c222vadovashe"]
+
+[ext_resource type="Script" path="res://scripts/CombatLoop/BattleStage.gd" id="1_tr5a2"]
+
+[sub_resource type="Theme" id="Theme_l3j78"]
+default_font_size = 60
+
+[node name="BattleStage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_l3j78")
+script = ExtResource("1_tr5a2")
+encounterName = null
+
+[node name="BattleStage" type="Node2D" parent="."]
+
+[node name="PlayerPositions" type="Node2D" parent="BattleStage"]
+
+[node name="Marker2D" type="Marker2D" parent="BattleStage/PlayerPositions"]
+position = Vector2(521, 155)
+
+[node name="Marker2D2" type="Marker2D" parent="BattleStage/PlayerPositions"]
+position = Vector2(522, 320)
+
+[node name="Marker2D3" type="Marker2D" parent="BattleStage/PlayerPositions"]
+position = Vector2(529, 544)
+
+[node name="EnemyPositions" type="Node2D" parent="BattleStage"]
+
+[node name="Marker2D" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1466, 141)
+
+[node name="Marker2D2" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1467, 306)
+
+[node name="Marker2D3" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1474, 530)
+
+[node name="Marker2D4" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1715, 114)
+
+[node name="Marker2D5" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1730, 262)
+
+[node name="Marker2D6" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1730, 568)
+
+[node name="Marker2D7" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1403, 685)
+
+[node name="Marker2D8" type="Marker2D" parent="BattleStage/EnemyPositions"]
+position = Vector2(1282, 422)
+
+[node name="characters" type="Node2D" parent="BattleStage"]
+
+[node name="FlowContainer" type="FlowContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="leftSide" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 800)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Bottom" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Bottom"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="FlowContainer" type="FlowContainer" parent="VBoxContainer/Bottom/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/Bottom/MarginContainer/FlowContainer"]
+layout_mode = 2
+text = "Turtle"

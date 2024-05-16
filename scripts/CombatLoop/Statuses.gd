@@ -74,8 +74,8 @@ func _init():
 		"Deals X damage each turn, ignoring DEF.",
 		func(statusEffects : Status): #what it will do when it is created.
 			pass,
-		func(statusEffects : Status,amount : int): #what it will do at the end of the turn.
-			statusEffects.takeDamageIgnoreDefence(amount)
+		func(status : Status,amount : int): #what it will do at the end of the turn.
+			status.takeDamageIgnoreDefence(amount)
 			pass,
 		)
 	)

@@ -8,3 +8,6 @@ var playerPieces
 #the enemy's pieces
 var enemyPieces
 
+@export var encounterName : String = ""
+
+var encounter : Encounter

@@ -1,11 +1,25 @@
 extends Node
 
+#Fighter Moves
 const PUNCH = "PUNCH"
-const SHOOT_ARROW = "SHOOT_ARROW"
-const WEAKEN = "WEAKEN"
 const STRENGTHEN = "STRENGTHEN"
 const BLIND_RAGE = "BLIND_RAGE"
+const RECKLESS_CHARGE = "RECKLESS_CHARGE"
+
+#Ranger Moves
+const SHOOT_ARROW = "SHOOT_ARROW"
+const POISION_ARROW = "POISION_ARROW"
+const BLOODY_ARROW = "BLOODY_ARROW"
+
+
+#Healer Moves
 const HEAL = "HEAL"
+const WEAKEN = "WEAKEN"
+
+
+
+
+
 
 var list : Array[Move] = []
 
@@ -24,6 +38,7 @@ func getList() -> Array[Move]:
 	
 	list.append(Move.new(
 			PUNCH, #name
+			"Deals 4 + STRENGTH damage.", #Summary
 			1, #maxTargets
 			true, #retargetable
 			false, #defaultTargetAllEnemies
@@ -38,6 +53,7 @@ func getList() -> Array[Move]:
 	
 	list.append(Move.new(
 			SHOOT_ARROW, #name
+			"Deals 8 + ACCURACY damage.",
 			1, #maxTargets
 			true, #retargetable
 			false, #defaultTargetAllEnemies
