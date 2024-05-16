@@ -5,8 +5,11 @@ const RANGER = "RANGER"
 const HEALER = "HEALER"
 const FIGHTER = "FIGHTER"
 
+const GAMBLER = "GAMBLER"
+
 #enemies
 const BASE_ENEMY = "BASE_ENEMY"
+const BUG = "BUG"
 
 var list : Array[CharacterClass] = []
 
@@ -41,6 +44,19 @@ func getList() -> Array[CharacterClass]:
 	)
 	
 	list.append(CharacterClass.new(
+		GAMBLER, #className
+		5, #ATKUP = atkUp
+		5, #SPDUP = spdUp
+		5, # DEFUP = defUp
+		1, #ACRUP = acrUp
+		#SkillUnlocks = skillUnlocks
+		{1 : mc.ROULETTE,
+		5 : mc.HANDLE,
+		10: mc.COUNT}
+		)
+	)
+	
+	list.append(CharacterClass.new(
 		BASE_ENEMY, #className
 		3, #ATKUP = atkUp
 		2, #SPDUP = spdUp
@@ -51,8 +67,15 @@ func getList() -> Array[CharacterClass]:
 		)
 	)
 	
-	
-	
-	
+	list.append(CharacterClass.new(
+		BUG, #className
+		3, #ATKUP = atkUp
+		5, #SPDUP = spdUp
+		3, # DEFUP = defUp
+		1, #ACRUP = acrUp
+		#SkillUnlocks = skillUnlocks
+		{5 : mc.BREAK}
+		)
+	)
 	
 	return list

@@ -2,6 +2,7 @@ extends Node
 
 const GEORGE = "GEORGE"
 const GOBLIN = "GOBLIN"
+const BUG = "BUG"
 
 var list : Array[CharacterPreset] = []
 
@@ -38,6 +39,7 @@ func getList() -> Array[CharacterPreset]:
 		)
 	)
 	
+	
 	list.append(CharacterPreset.new(
 		GOBLIN, #characterName: String,
 		"Its a goblin, about as dumb as it gets.",#character Description : String
@@ -55,5 +57,21 @@ func getList() -> Array[CharacterPreset]:
 		)
 	)
 	
+	list.append(CharacterPreset.new(
+		BUG, #characterName: String,
+		"Somethings wrong with this world...",#character Description : String
+		"res://textures/icon.svg",#Sprite Path
+		ccc.BUG, #characterClass : String,
+		3, #startingLevel : int,
+		23, #maxHealth: int,
+		10, #maxMana: int,
+		7, #ATK: int,
+		7, #SPD: int,
+		5, #DEF: int,
+		1, #ACR: int,
+		#Starting Moves
+		[mc.GLITCH]
+		)
+	)
 	
 	return list

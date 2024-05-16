@@ -17,9 +17,20 @@ const HEAL = "HEAL"
 const WEAKEN = "WEAKEN"
 
 
+# gambler moves
+const ROULETTE = "ROULETTE"
+const HANDLE = "HANDLE"
+const COUNT = "COUNT"
+
 # goblin moves
 const STAB = "STAB"
 const STAB_WEAKNESS = "STAB_WEAKNESS"
+
+# bug moves
+const GLITCH = "GLITCH"
+const BREAK = "BREAK";
+
+
 
 
 
@@ -96,6 +107,92 @@ func getList() -> Array[Move]:
 				pass
 				, #apply lambda, what it does when it's applied. 
 			#code that it runs by default when selected.
+		)
+	)
+	
+	list.append(Move.new(
+			GLITCH, #name
+			"Deals 10 + STRENGTH / 2 damage.", #Summary
+			1, #maxTargets
+			true, #retargetable
+			false, #defaultTargetAllEnemies
+			false, #defaultTargetAllAllies
+			func (this : Move):
+				this.targets[0].takeDamage(10 + this.myOwner.status.getStrength() / 2)
+				pass
+				, #apply lambda, what it does when it's applied. 
+			#code that it runs by default when selected.
+		)
+	)
+	
+	list.append(Move.new(
+			BREAK, #name
+			"Lowers targets deffense and deals 5 damage.", #Summary
+			1, #maxTargets
+			true, #retargetable
+			false, #defaultTargetAllEnemies
+			false, #defaultTargetAllAllies
+			func (this : Move):
+				this.targets[0].takeDamage(5)
+				#defense lowering needs to be coded
+				pass
+				, #apply lambda, what it does when it's applied. 
+			#code that it runs by default when selected.
+		)
+	)
+	
+	list.append(Move.new(
+			ROULETTE, #name
+			"Deals a random amount of damage from 0 to 36 * level / 2.", #Summary
+			1, #maxTargets
+			true, #retargetable
+			false, #defaultTargetAllEnemies
+			false, #defaultTargetAllAllies
+			func (this : Move):
+				#make random, 0 - 36 later. Also need to determine how damage wants to be calculated, weateher by user lv or target lv, or some other way
+				this.targets[0].takeDamage(17 * (this.targets[0].level / 2))
+				pass
+				, #apply lambda, what it does when it's applied. 
+			#code that it runs by default when selected.
+		)
+	)
+	
+	list.append(Move.new(
+			HANDLE, #name
+			"Deals damage to all enamies, 5 + STR / targets.count.", #Summary
+			1, #maxTargets
+			true, #retargetable
+			true, #defaultTargetAllEnemies
+			false, #defaultTargetAllAllies
+			func (this : Move):
+				for x in this.targets:
+					this.targets[x].takeDamage(5 + this.myOwner.status.getStrength() / this.targets.size())
+				
+				pass
+				, #apply lambda, what it does when it's applied. 
+			#code that it runs by default when selected.
+		)
+	)
+	
+	list.append(Move.new(
+			COUNT, #name
+			"ATK +1 and ACC +1.", #Summary
+			1, #maxTargets
+			false, #retargetable
+			false, #defaultTargetAllEnemies
+			false, #defaultTargetAllAllies
+			
+			func (this : Move):
+				#acc and atk increase by one stage
+				
+				pass
+				, #apply lambda, what it does when it's applied. 
+			#code that it runs by default when selected.
+			func (this : Move):
+				this.targets.clear()
+				this.targets.append(this.myOwner)
+				pass
+				,
 		)
 	)
 	
