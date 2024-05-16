@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw478kcw8ubkt"]
+[gd_scene load_steps=3 format=3 uid="uid://bw478kcw8ubkt"]
 
 [ext_resource type="Script" path="res://scripts/CombatLoop/GamePieceShell.gd" id="1_61k2o"]
+[ext_resource type="Texture2D" uid="uid://chpiqvpgi8rbh" path="res://icon.svg" id="2_mvgnn"]
 
 [node name="GamePieceShell" type="Node2D"]
 script = ExtResource("1_61k2o")
 
 [node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_mvgnn")
+
+[node name="targetButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.12549)
+offset_left = -82.0
+offset_top = -80.0
+offset_right = 78.0
+offset_bottom = 88.0
+
+[connection signal="pressed" from="targetButton" to="." method="_on_target_button_pressed"]

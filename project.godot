@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 StatusConstants="*res://scripts/Constants/StatusConstants.gd"
 MoveConstants="*res://scripts/Constants/MoveConstants.gd"
 CharacterConstants="*res://scripts/Constants/CharacterConstants.gd"
+BattleStageGlobals="*res://scripts/CombatLoop/BattleStageGlobals.gd"
+Globals="*res://scripts/Globals.gd"
 
 [display]
 
